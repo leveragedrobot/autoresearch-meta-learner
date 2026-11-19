@@ -1,5 +1,10 @@
 # Experiment Ideas
 
+**Metric:** [name] — [lower / higher] is better. **Keep threshold:** [X% improvement].
+**Last updated:** run [N], [date]
+
+All percentages in this file are improvement over the baseline at the time of the test. Positive = better, negative = worse, whichever direction the raw metric moves.
+
 ## Tier 1: High Confidence (try first)
 [Ideas most likely to produce measurable improvement. Rank by expected impact.]
 
@@ -15,12 +20,17 @@
 
 1. **[Experiment name]** — [Why gains are likely marginal.]
 
-## Graveyard (do NOT retry)
-[Failed approaches with reasons. This is the most valuable section — it prevents wasted cycles.]
+## Near-Misses (improved, but below the keep threshold)
+[Positive results too small to keep on their own. Test them in pairs — small gains can stack.]
 
-- **[Approach name]**: [X/Y keeps across Z runs]. [Why it fails: root cause, not just "it regressed".]
+- **[Experiment name]**: [+X% on baseline Y, run N]. [What it changed, why it might combine well.]
 
-## Near-Misses (5-10% improvement, save for combination)
-[Experiments below keep threshold that might compound when paired.]
+## Parked (failed, not enough evidence to bury)
+[Failed once or twice with no clear root cause. Retry when the "revisit if" condition is met.]
 
-- **[Experiment name]**: [X% improvement on baseline Y]. [What it changed, why it might combine well.]
+- **[Approach name]**: [0/1 keeps, run N]. Revisit if: [what would have to change].
+
+## Graveyard (do NOT retry unless the revisit condition is met)
+[Entry requires 3+ failed attempts OR a known root cause. This section prevents wasted cycles.]
+
+- **[Approach name]**: [0/3 keeps, runs N-M]. Why it fails: [root cause, not just "it regressed"]. Revisit if: [structural change that would remove the root cause, or "never"].
